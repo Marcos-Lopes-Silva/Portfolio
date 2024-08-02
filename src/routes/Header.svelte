@@ -10,6 +10,7 @@
 	const dispatch = createEventDispatcher();
 
 	function handleScrollTo(section: string) {
+		activeSession = section;
 		dispatch('scrollToSection', section);
 	}
 
@@ -48,11 +49,11 @@
 		<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 		<ul>
 			
-			<li on:click|preventDefault={() => handleScrollTo('home')} class={activeSession === 'home' ? 'page' : undefined}>
+			<li on:click|preventDefault={() => handleScrollTo('home')} aria-current={activeSession === 'home' ? 'page' : undefined}>
 				<a href="/">Home</a>
 			</li>
 			
-			<li on:click|preventDefault={() => handleScrollTo('about')} class={activeSession === 'about' ? 'page' : undefined}>
+			<li on:click|preventDefault={() => handleScrollTo('about')} aria-current={activeSession === 'about' ? 'page' : undefined}>
 				<a href="/about">About</a>
 			</li>
 

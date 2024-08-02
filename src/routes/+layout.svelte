@@ -5,16 +5,19 @@
 	import Background from './Background.svelte';
 	import Home from './+page.svelte';
 	import About from './about/+page.svelte';
+	import Projects from './projects/+page.svelte';
 	import { onMount } from 'svelte';
 
 	interface Sections {
 		home: HTMLElement | null;
 		about: HTMLElement | null;
+		projects: HTMLElement | null;
 	}
 
 	let sections: Sections = {
 		home: null,
-		about: null
+		about: null,
+		projects: null
 	};
 
 	function scrollToSection(section: keyof Sections) {
@@ -93,6 +96,9 @@
 		</section>
 		<section bind:this={sections.about} id="about">
 			<About />
+		</section>
+		<section bind:this={sections.projects} id="projects">
+			<Projects />
 		</section>
 	</main>
 </div>
