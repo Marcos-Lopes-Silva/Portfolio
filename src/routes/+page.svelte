@@ -110,6 +110,7 @@
 	<div class="profile">
 		<img src="https://avatars.githubusercontent.com/u/86811187?v=4" alt="Marcos Lopes" />
 		<h3>Marcos Silva, 21</h3>
+		<p>LinkedIn: <a></a></p>
 	</div>
 </section>
 
@@ -138,7 +139,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		max-width: 10%;
+		max-width: 15%;
 	}
 
 	.techs-list {
