@@ -96,10 +96,13 @@
 							></progress>
 						</p>
 						<p>Básico &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <progress value="45" max="100"></progress></p>
-						<p>Intermediário &nbsp; <progress value="60" max="100"></progress></p>
+						
 					</div>
 					<div class="caption">
+						<p>Intermediário &nbsp; <progress value="60" max="100"></progress></p>
 						<p>Avançado &nbsp; &nbsp; <progress value="80" max="100"></progress></p>
+					</div>
+					<div class="caption">
 						<p>Especialista &nbsp; <progress value="100" max="100"></progress></p>
 					</div>
 				</div>
@@ -146,6 +149,7 @@
 		display: flex;
 		flex-direction: row;
 		gap: 10%;
+		overflow: hidden;
 	}
 
 	.vr {
@@ -167,7 +171,7 @@
 		margin: 5rem;
 		max-width: 55%;
 		box-sizing: border-box;
-		overflow-y: scroll;
+		overflow-y: hidden;
 	}
 
 	.profile {
