@@ -7,6 +7,8 @@
 	import About from './about/+page.svelte';
 	import Projects from './projects/+page.svelte';
 	import { onMount } from 'svelte';
+	import { url } from 'inspector';
+	import path from 'path';
 
 	interface Sections {
 		home: HTMLElement | null;
@@ -57,11 +59,11 @@
 
 	onMount(() => {
 		window.addEventListener('scroll', onScroll);
-		onScroll(); // Initial call to set active section
+		onScroll(); 
 	});
 
 	function onScroll() {
-		const scrollPosition = window.scrollY + window.innerHeight / 2; // Middle of viewport
+		const scrollPosition = window.scrollY + window.innerHeight / 2; 
 		const sectionEntries = Object.entries(sections) as [keyof Sections, HTMLElement | null][];
 		let newActiveSection = '';
 
@@ -82,33 +84,29 @@
 	}
 </script>
 
-<div class="app">
-	<Header
-		activeSession={activeSection}
-		on:scrollToSection={(event) => scrollToSection(event.detail)}
-	/>
-	<Background />
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-	<main on:click={() => (open = !open)}>
-		<section bind:this={sections.home} id="home">
-			<Home />
-		</section>
-		<section bind:this={sections.about} id="about">
-			<About />
-		</section>
-		<section bind:this={sections.projects} id="projects">
-			<Projects />
-		</section>
-	</main>
-</div>
+<Header
+	activeSession={activeSection}
+	on:scrollToSection={(event) => scrollToSection(event.detail)}
+/>
+<Background />
+
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+<main on:click={() => (open = !open)}>
+	<section bind:this={sections.home} id="home">
+		<Home />
+	</section>
+	<section bind:this={sections.about} id="about">
+		<About />
+	</section>
+	<section bind:this={sections.projects} id="projects">
+		<Projects />
+	</section>
+</main>
+
 
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
+
 
 	main {
 		flex: 1;
@@ -119,5 +117,23 @@
 		max-width: 120rem;
 		margin: 0 auto;
 		box-sizing: border-box;
+	}
+
+	section {
+		display: flex;
+		min-height: 90vh;
+		height: 100%;
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		flex: 0.6;
+	}
+
+	@media screen and (max-width: 768px) {
+		section {
+			flex-direction: column-reverse;
+			align-items: center;
+		}
 	}
 </style>

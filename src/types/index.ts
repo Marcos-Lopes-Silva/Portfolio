@@ -3,3 +3,7 @@ export default interface Star {
     left: number;
     speed: number;
 }
+
+import type { Endpoints } from "@octokit/types";
+
+export type GetListReposResponse = Endpoints["GET /user/repos"]["response"]["data"];

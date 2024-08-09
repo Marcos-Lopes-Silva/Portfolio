@@ -1,11 +1,6 @@
-<svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
-</svelte:head>
 
-<div class="about" >
-	<h1 >Sobre mim</h1>
-	<div class="vr"/>
+	
+	
 	<div class="text-column">
 		<p>
 			Sou Marcos, um desenvolvedor Fullstack com especialização em desenvolvimento backend, atualmente cursando Engenharia de Software. Minha paixão por tecnologia me leva a explorar continuamente novas ferramentas e metodologias, sempre buscando soluções eficientes e escaláveis para problemas complexos.
@@ -20,27 +15,17 @@
 			Sou um profissional comprometido e detalhista, sempre pronto para colaborar em equipe e contribuir para o sucesso coletivo. Se você está procurando um desenvolvedor backend dedicado e apaixonado por tecnologia, estou ansioso para conectar e explorar como posso ajudar a alcançar seus objetivos.
 		</p>
 	</div>
-</div>
+	<div class="vr"/>
+	<h1 >Sobre mim</h1>
+
 
 <style>
-	.about {
-		display: flex;
-		min-height: 90vh;
-		height: 100%;
-		padding-left: 4.5%;
-		gap: 10%;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		overflow: hidden;
-		flex: 0.6;
-	}
-
-	.about h1 {
+	h1 {
 		display: flex;
 		flex-direction: column;
 		max-height: 100vh;
 		max-width: 45%;
+		margin-right: 12%;
 		align-items: center;
 		justify-content: center;
 		box-sizing: border-box;
@@ -51,8 +36,9 @@
 		flex-direction: column;
 		align-items: center;
 		margin: 5rem;
-		max-width: 55%;
+		max-width: 60%;
 		box-sizing: border-box;
+		font-size: 18px;
 		text-indent: 1.5em;
 		line-height: 1.5;
 	}
