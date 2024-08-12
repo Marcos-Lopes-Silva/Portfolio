@@ -99,9 +99,9 @@
 	<section bind:this={sections.about} id="about">
 		<About />
 	</section>
-	<section bind:this={sections.projects} id="projects">
+	<!-- <section bind:this={sections.projects} id="projects">
 		<Projects />
-	</section>
+	</section> -->
 </main>
 
 
