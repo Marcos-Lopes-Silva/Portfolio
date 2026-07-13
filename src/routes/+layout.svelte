@@ -7,8 +7,6 @@
 	import About from './about/+page.svelte';
 	import Projects from './projects/+page.svelte';
 	import { onMount } from 'svelte';
-	import { url } from 'inspector';
-	import path from 'path';
 
 	interface Sections {
 		home: HTMLElement | null;
@@ -99,9 +97,9 @@
 	<section bind:this={sections.about} id="about">
 		<About />
 	</section>
-	<!-- <section bind:this={sections.projects} id="projects">
+	<section bind:this={sections.projects} id="projects">
 		<Projects />
-	</section> -->
+	</section>
 </main>
 
 

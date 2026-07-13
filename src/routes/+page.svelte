@@ -26,11 +26,11 @@
 <div class="panel">
 	<h2>Olá!</h2>
 	<p>
-		Meu nome é Marcos, sou desenvolvedor fullstack e Engenhario de Software em formação. Criei
-		este portfólio para mostrar meu trabalho e compartilhar meu conhecimento com você. Fique à
-		vontade para explorar e, se algo chamar sua atenção, não hesite em entrar em contato comigo
-		pelo meu email, LinkedIn ou GitHub. Estou sempre aberto a novas conexões e oportunidades de
-		colaboração.
+		Meu nome é Marcos, sou desenvolvedor full-stack com foco em frontend (React, Next.js e
+		TypeScript) e estudante de Engenharia de Software. Criei este portfólio para mostrar meu
+		trabalho e compartilhar meu conhecimento com você. Fique à vontade para explorar e, se algo
+		chamar sua atenção, não hesite em entrar em contato comigo pelo meu email, LinkedIn ou GitHub.
+		Estou sempre aberto a novas conexões e oportunidades de colaboração.
 	</p>
 	<div class="techs">
 		<h2>Tecnologias que uso</h2>
@@ -38,54 +38,54 @@
 		<div class="techs-list">
 			<ul>
 				<li>
-					<img alt="HTML5" src={html5} /> <progress value="90" max="100"></progress>
+					<img alt="HTML5" src={html5} /> <progress value="85" max="100"></progress>
 				</li>
 				<li>
-					<img alt="CSS3" src={css3} /> <progress value="70" max="100"></progress>
+					<img alt="CSS3" src={css3} /> <progress value="80" max="100"></progress>
 				</li>
 				<li>
-					<img alt="JavaScript" src={js} /> <progress value="100" max="100"></progress>
+					<img alt="JavaScript" src={js} /> <progress value="90" max="100"></progress>
 				</li>
 				<li>
-					<img alt="Java" src={java} /> <progress value="100" max="100"></progress>
+					<img alt="Java" src={java} /> <progress value="65" max="100"></progress>
 				</li>
 				<li>
-					<img alt="Python" src={python} /> <progress value="40" max="100"></progress>
+					<img alt="Python" src={python} /> <progress value="70" max="100"></progress>
 				</li>
 				<li>
-					<img alt="Kotlin" src={kotlin} /> <progress value="75" max="100"></progress>
+					<img alt="Kotlin" src={kotlin} /> <progress value="60" max="100"></progress>
 				</li>
 				<li>
-					<img alt="TypeScript" src={ts} /> <progress value="100" max="100"></progress>
+					<img alt="TypeScript" src={ts} /> <progress value="90" max="100"></progress>
 				</li>
 				<li>
-					<img alt="PHP" src={php} /> <progress value="90" max="100"> </progress>
+					<img alt="PHP" src={php} /> <progress value="70" max="100"> </progress>
 				</li>
 			</ul>
 			<ul>
 				<li>
-					<img alt="SpringBoot" src={springboot} /> <progress value="100" max="100"></progress>
+					<img alt="SpringBoot" src={springboot} /> <progress value="60" max="100"></progress>
 				</li>
 				<li>
-					<img alt="Laravel" src={laravel} /> <progress value="90" max="100"></progress>
+					<img alt="Laravel" src={laravel} /> <progress value="70" max="100"></progress>
 				</li>
 				<li>
-					<img alt="NextJS" src={nextjs} /> <progress value="90" max="100"></progress>
+					<img alt="NextJS" src={nextjs} /> <progress value="85" max="100"></progress>
 				</li>
 				<li>
-					<img alt="React" src={react} /> <progress value="100" max="100"></progress>
+					<img alt="React" src={react} /> <progress value="90" max="100"></progress>
 				</li>
 				<li>
-					<img alt="Svelte" src={svelte} /> <progress value="60" max="100"></progress>
+					<img alt="Svelte" src={svelte} /> <progress value="70" max="100"></progress>
 				</li>
 				<li>
-					<img alt="Node" src={node} /> <progress value="100" max="100"></progress>
+					<img alt="Node" src={node} /> <progress value="75" max="100"></progress>
 				</li>
 				<li>
-					<img alt="MySql" src={mysql} /> <progress value="100" max="100"></progress>
+					<img alt="MySql" src={mysql} /> <progress value="70" max="100"></progress>
 				</li>
 				<li>
-					<img alt="MongoDB" src={mongodb} /> <progress value="100" max="100"></progress>
+					<img alt="MongoDB" src={mongodb} /> <progress value="80" max="100"></progress>
 				</li>
 			</ul>
 			<div class="captions">
@@ -111,11 +111,10 @@
 </div>
 <div class="vr" />
 <div class="profile">
-	<img src="https://avatars.githubusercontent.com/u/86811187?v=4" alt="Marcos Lopes" />
-	<h3>Marcos Silva, 21</h3>
+	<h3>Marcos Silva, 23</h3>
 	<div>
 		<p><img src={linkedinContacts} alt="LinkedIn"> <a href="https://www.linkedin.com/in/marcossilva23/">in/marcossilva23</a></p>
-		<p><img src={document} alt="Resume"> <a href="/resume">Marcos_Silva.pdf</a></p>	
+		<p><img src={document} alt="Resume"> <a href="/Marcos_Silva.pdf?v=3" target="_blank" rel="noreferrer">Marcos_Silva.pdf</a></p>
 	</div>
 </div>
 

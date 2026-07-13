@@ -3,16 +3,16 @@
 	
 <div class="text-column">
 	<p>
-		Sou Marcos, um desenvolvedor Fullstack com especialização em desenvolvimento backend, atualmente cursando Engenharia de Software. Minha paixão por tecnologia me leva a explorar continuamente novas ferramentas e metodologias, sempre buscando soluções eficientes e escaláveis para problemas complexos.
+		Sou Marcos, desenvolvedor full-stack com foco em frontend (React, Next.js e TypeScript), cursando Engenharia de Software. Gosto de transformar problemas complexos em interfaces claras, bem estruturadas e agradáveis de usar.
 	</p>
 	<p>
-		Tenho experiência na construção de APIs robustas e na integração de sistemas com serviços como o Google Sign-In e a Google People API. Além disso, já trabalhei com a AWS, o que me proporcionou uma sólida compreensão de serviços em nuvem e suas aplicações. Tenho um foco especial em Java, utilizando essa linguagem para desenvolver soluções backend eficientes e bem estruturadas.
+		Atuei como principal desenvolvedor do frontend de uma plataforma web de dados intensivos, em projeto para a Petrobras em parceria com o CeMEAI, trabalhando com gerenciamento de estado (Redux Toolkit), visualização de dados e integração com APIs assíncronas. Também atuo no backend com Python e FastAPI, e já trabalhei com PHP/Laravel e serviços em nuvem na AWS.
 	</p>
 	<p>
-		Minha abordagem de desenvolvimento é baseada em boas práticas e em um código limpo e organizado. Recentemente, venho aprimorando minhas habilidades em desenvolvimento Android, explorando novas técnicas e ferramentas para criar aplicativos móveis de alta qualidade.
+		Tenho experiência com aplicativos mobile (React Native e Android com Kotlin), testes automatizados (Jest e Pytest) e liderança de equipe: ensinei programação e coordenei bolsistas no desenvolvimento do SAVE, na UNIPAMPA. Valorizo boas práticas, código limpo e organizado.
 	</p>
 	<p>
-		Sou um profissional comprometido e detalhista, sempre pronto para colaborar em equipe e contribuir para o sucesso coletivo. Se você está procurando um desenvolvedor backend dedicado e apaixonado por tecnologia, estou ansioso para conectar e explorar como posso ajudar a alcançar seus objetivos.
+		Sou comprometido, detalhista e sempre pronto para colaborar em equipe. Se você procura um desenvolvedor frontend/full-stack dedicado e apaixonado por tecnologia, será um prazer conversar e explorar como posso ajudar a alcançar seus objetivos.
 	</p>
 </div>
 <div class="vr"/>

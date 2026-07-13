@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import github from '$lib/images/github.svg';
 	import linkedin from '$lib/images/linkedin.svg';
 	import gmail from '$lib/images/gmail.svg';
@@ -39,8 +38,8 @@
 	<aside class="sidebar" class:open={open}>
 		<nav>
 			<a href="/" on:click={() => open = !open}>Home</a>
-			<a href="/about" on:click={() => open = !open}>About</a>
-			<a href="/sverdle" on:click={() => open = !open}>Sverdle</a>
+			<a href="/about" on:click={() => open = !open}>Sobre</a>
+			<a href="/projects" on:click={() => open = !open}>Projetos</a>
 		</nav>
 	</aside>
 
@@ -54,15 +53,11 @@
 			</li>
 			
 			<li on:click|preventDefault={() => handleScrollTo('about')} aria-current={activeSession === 'about' ? 'page' : undefined}>
-				<a href="/about">About</a>
+				<a href="/about">Sobre</a>
 			</li>
 
 			<li on:click|preventDefault={() => handleScrollTo('projects')} class={activeSession === 'projects' ? 'page' : undefined}>
-				<a href="/projects">Projects</a>
-			</li>
-
-			<li on:click|preventDefault={() => activeSession = ''} aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
+				<a href="/projects">Projetos</a>
 			</li>
 		</ul>
 	</nav>
