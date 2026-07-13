@@ -56,7 +56,7 @@
 				<a href="/about">Sobre</a>
 			</li>
 
-			<li on:click|preventDefault={() => handleScrollTo('projects')} class={activeSession === 'projects' ? 'page' : undefined}>
+			<li on:click|preventDefault={() => handleScrollTo('projects')} aria-current={activeSession === 'projects' ? 'page' : undefined}>
 				<a href="/projects">Projetos</a>
 			</li>
 		</ul>
