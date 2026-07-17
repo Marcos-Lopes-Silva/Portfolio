@@ -10,6 +10,20 @@
 
 	const projects: Project[] = [
 		{
+			name: 'Agência de Cargas',
+			description:
+				'Sistema interno de gestão de fretes agenciados: casa embarcadores (quem tem carga) com transportadoras e motoristas autônomos (quem tem veículo), tornando visível o spread da agência e respondendo "cadê minha carga?" sem depender do WhatsApp. Controle de acesso por papéis, base de 5.570 municípios do IBGE e rastreamento de fretes.',
+			techs: ['Next.js 16', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'HeroUI / Tailwind'],
+			live: 'https://agencia-cargas.marcosls.com'
+		},
+		{
+			name: 'Viver — Residencial Geriátrico',
+			description:
+				'Sistema de gestão para o Residencial Geriátrico Viver: cadastro de residentes, controle de acesso por perfis (administrativo, secretaria, cuidadores, médico, fisioterapeuta e nutricionista) e rotinas de cuidado, desenvolvido a partir de proposta e protótipos reais do cliente.',
+			techs: ['Java', 'Spring Boot', 'JPA / Hibernate', 'React', 'Vite', 'PostgreSQL'],
+			live: 'https://viver.marcosls.com'
+		},
+		{
 			name: 'FragVault',
 			description:
 				'Plataforma web que faz o parse de replays (demos) de Counter-Strike 2 e reconstrói um mapa 2D com os movimentos e eventos da partida. Upload direto para storage em nuvem, processamento assíncrono e visualização interativa.',
