@@ -1,291 +1,299 @@
 <script lang="ts">
-	import github from '$lib/images/github.svg';
-	import linkedin from '$lib/images/linkedin.svg';
-	import gmail from '$lib/images/gmail.svg';
-	import { createEventDispatcher } from 'svelte';
+	import { onMount } from 'svelte';
+	import GithubIcon from '$lib/icons/GithubIcon.svelte';
+	import LinkedinIcon from '$lib/icons/LinkedinIcon.svelte';
+	import MailIcon from '$lib/icons/MailIcon.svelte';
 
-	export let activeSession: string;
+	const links = [
+		{ id: 'home', label: 'Início' },
+		{ id: 'about', label: 'Sobre' },
+		{ id: 'stack', label: 'Stack' },
+		{ id: 'projects', label: 'Projetos' },
+		{ id: 'contact', label: 'Contato' }
+	];
 
-	const dispatch = createEventDispatcher();
-
-	function handleScrollTo(section: string) {
-		activeSession = section;
-		dispatch('scrollToSection', section);
-	}
-
-	let openGmail = () => {
-		const recipient = "marcoseduardolopes00@gmail.com";
-	    const subject = "";
-    	const body = "Olá,\n\nGostaria de marcar uma hora para conversarmos, você tem disponibilidade?\n\nAtenciosamente";
-
-		window.open(`mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`)
-	}
-
+	let active = 'home';
+	let scrolled = false;
 	let open = false;
+
+	function openGmail() {
+		const recipient = 'marcoseduardolopes00@gmail.com';
+		const body =
+			'Olá,\n\nGostaria de marcar uma hora para conversarmos, você tem disponibilidade?\n\nAtenciosamente';
+		window.open(`mailto:${recipient}?subject=&body=${encodeURIComponent(body)}`);
+	}
+
+	function goTo(id: string) {
+		open = false;
+		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+	}
+
+	onMount(() => {
+		const sections = links
+			.map((l) => document.getElementById(l.id))
+			.filter((el): el is HTMLElement => !!el);
+
+		const onScroll = () => {
+			scrolled = window.scrollY > 20;
+			const mid = window.scrollY + window.innerHeight * 0.35;
+			for (const section of sections) {
+				if (section.offsetTop <= mid) active = section.id;
+			}
+		};
+
+		onScroll();
+		window.addEventListener('scroll', onScroll, { passive: true });
+		return () => window.removeEventListener('scroll', onScroll);
+	});
 </script>
 
-<header>
-	<a class="logo" href="/">MS</a>
+<header class:scrolled>
+	<a class="logo" href="#home" on:click|preventDefault={() => goTo('home')}>
+		<span class="gradient-text">MS</span>
+	</a>
 
-	<button class="menu-btn" class:open={open} on:click={() => open = !open}>
-		<div class:open={open}>
-			<div class="line1" />
-			<div class="line2" />
-			<div class="line3" />
-		</div>
-	</button>
-	
-	<aside class="sidebar" class:open={open}>
-		<nav>
-			<a href="/" on:click={() => open = !open}>Home</a>
-			<a href="/about" on:click={() => open = !open}>Sobre</a>
-			<a href="/projects" on:click={() => open = !open}>Projetos</a>
-		</nav>
-	</aside>
-
-	<nav>
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-		<ul>
-			
-			<li on:click|preventDefault={() => handleScrollTo('home')} aria-current={activeSession === 'home' ? 'page' : undefined}>
-				<a href="/">Home</a>
-			</li>
-			
-			<li on:click|preventDefault={() => handleScrollTo('about')} aria-current={activeSession === 'about' ? 'page' : undefined}>
-				<a href="/about">Sobre</a>
-			</li>
-
-			<li on:click|preventDefault={() => handleScrollTo('projects')} aria-current={activeSession === 'projects' ? 'page' : undefined}>
-				<a href="/projects">Projetos</a>
-			</li>
-		</ul>
+	<nav class="desktop-nav">
+		{#each links as link}
+			<a
+				href={`#${link.id}`}
+				class:active={active === link.id}
+				on:click|preventDefault={() => goTo(link.id)}
+			>
+				{link.label}
+			</a>
+		{/each}
 	</nav>
 
-	<div class="corner">
-		<button class="button" on:click={openGmail}>
-			<img src={gmail} alt="Gmail" />
+	<div class="socials">
+		<button type="button" on:click={openGmail} aria-label="Enviar e-mail">
+			<MailIcon />
 		</button>
-		<a href="https://github.com/Marcos-Lopes-Silva">
-			<img src={github} alt="GitHub" />
+		<a href="https://github.com/Marcos-Lopes-Silva" target="_blank" rel="noreferrer" aria-label="GitHub">
+			<GithubIcon />
 		</a>
-		<a href="https://linkedin.com/in/marcossilva23">
-			<img src={linkedin} alt="LinkedIn" />
+		<a href="https://linkedin.com/in/marcossilva23" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+			<LinkedinIcon />
 		</a>
 	</div>
+
+	<button
+		class="hamburger"
+		class:open
+		on:click={() => (open = !open)}
+		aria-label="Abrir menu"
+		aria-expanded={open}
+	>
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
 </header>
+
+{#if open}
+	<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+	<div class="overlay" on:click={() => (open = false)}></div>
+{/if}
+
+<aside class="mobile-menu" class:open>
+	<nav>
+		{#each links as link}
+			<a
+				href={`#${link.id}`}
+				class:active={active === link.id}
+				on:click|preventDefault={() => goTo(link.id)}
+			>
+				{link.label}
+			</a>
+		{/each}
+	</nav>
+</aside>
 
 <style>
 	header {
-		display: flex;
 		position: fixed;
-		gap: 5em;
-		width: 100%;
-		justify-content: flex-end;
-	}
-
-	.button {
-		background: none;
-		border: none;
-	}
-
-	.corner {
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 50;
 		display: flex;
-		margin-top: 10px;
-		height: 4em;
+		align-items: center;
+		gap: 2rem;
+		padding: 1rem clamp(1.2rem, 5vw, 3rem);
+		transition:
+			background 0.3s ease,
+			border-color 0.3s ease,
+			backdrop-filter 0.3s ease;
+		border-bottom: 1px solid transparent;
+	}
+
+	header.scrolled {
+		background: rgba(7, 7, 12, 0.6);
+		backdrop-filter: blur(14px);
+		-webkit-backdrop-filter: blur(14px);
+		border-bottom-color: var(--border);
 	}
 
 	.logo {
-		font-size: 1.5em;
-		margin-left: 6%;
-		margin-top: 12px;
-		margin-right: auto;
-		text-decoration: none;
-	}
-
-	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-	}
-
-	.corner img {
-		width: 3em;
-		height: 3em;
-		object-fit: contain;
-	}
-
-	nav {
-		display: flex;
-		margin-top: 20px;
-		padding-left: 50px;
-		--background: rgba(255, 255, 255, 0.7);
-	}
-
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background-size: contain;
-	}
-
-	li {
-		position: relative;
-		color: white;
-		height: 100%;
-	}
-
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
-	}
-
-	.menu-btn {
-		display: none;
-	}
-
-	.sidebar {
-		display: none;
-	}
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 0.5rem;
-		color: rgb(255, 255, 255);
+		font-family: var(--font-display);
+		font-size: 1.5rem;
 		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
+		letter-spacing: -0.03em;
+		margin-right: auto;
 	}
 
-	a:hover {
-		color: rgb(255, 255, 255, 0.7);
+	.desktop-nav {
+		display: flex;
+		gap: 0.4rem;
 	}
 
-	@media screen and (max-width: 768px) {
+	.desktop-nav a {
+		position: relative;
+		padding: 0.4rem 0.85rem;
+		font-size: 0.82rem;
+		font-weight: 500;
+		letter-spacing: 0.02em;
+		color: var(--text-dim);
+		border-radius: 999px;
+		transition:
+			color 0.2s ease,
+			background 0.2s ease;
+	}
 
-		@keyframes translateOpen {
-			from {
-				transform: translateX(-100%);
-			}
-			to {
-				transform: translateX(-65%);
-			}
-		}
+	.desktop-nav a:hover {
+		color: var(--text);
+	}
 
-		@keyframes translateClose {
-			from {
-				transform: translateX(-65%);
-			}
-			to {
-				transform: translateX(-100%);
-			}
-		}
+	.desktop-nav a.active {
+		color: var(--text);
+		background: var(--surface-2);
+	}
 
+	.socials {
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+	}
 
-		header > nav {
+	.socials a,
+	.socials button {
+		display: grid;
+		place-items: center;
+		width: 2.3rem;
+		height: 2.3rem;
+		padding: 0;
+		border: none;
+		background: none;
+		border-radius: 10px;
+		color: var(--text-dim);
+		cursor: pointer;
+		transition:
+			background 0.2s ease,
+			transform 0.2s ease,
+			color 0.2s ease;
+	}
+
+	.socials a:hover,
+	.socials button:hover {
+		background: var(--surface-2);
+		color: var(--text);
+		transform: translateY(-2px);
+	}
+
+	.socials :global(svg) {
+		width: 1.35rem;
+		height: 1.35rem;
+	}
+
+	.hamburger {
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		gap: 5px;
+		width: 2.4rem;
+		height: 2.4rem;
+		padding: 0;
+		border: none;
+		background: none;
+		cursor: pointer;
+		z-index: 60;
+	}
+
+	.hamburger span {
+		display: block;
+		width: 1.5rem;
+		height: 2px;
+		margin: 0 auto;
+		background: var(--text);
+		border-radius: 2px;
+		transition: transform 0.3s ease, opacity 0.2s ease;
+	}
+
+	.hamburger.open span:nth-child(1) {
+		transform: translateY(7px) rotate(45deg);
+	}
+	.hamburger.open span:nth-child(2) {
+		opacity: 0;
+	}
+	.hamburger.open span:nth-child(3) {
+		transform: translateY(-7px) rotate(-45deg);
+	}
+
+	.overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 40;
+		background: rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(2px);
+	}
+
+	.mobile-menu {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 45;
+		width: min(78vw, 18rem);
+		padding: 5.5rem 2rem 2rem;
+		background: rgba(12, 12, 22, 0.92);
+		backdrop-filter: blur(18px);
+		border-left: 1px solid var(--border);
+		transform: translateX(100%);
+		transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	.mobile-menu.open {
+		transform: none;
+	}
+
+	.mobile-menu nav {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.mobile-menu a {
+		padding: 0.7rem 0.9rem;
+		font-family: var(--font-display);
+		font-size: 1.1rem;
+		color: var(--text-dim);
+		border-radius: 10px;
+		transition: background 0.2s ease, color 0.2s ease;
+	}
+
+	.mobile-menu a.active,
+	.mobile-menu a:hover {
+		color: var(--text);
+		background: var(--surface-2);
+	}
+
+	@media (max-width: 780px) {
+		.desktop-nav,
+		.socials {
 			display: none;
 		}
-
-		.logo {
-			display: none;
-		}
-
-		aside {		
-			position: fixed;
-			top: 0;
-			bottom: 0;
-			width: 250px;
-			background-color: #333;
-			color: white;
-			left: 0;
-			transition: translateClose 0.3s ease-out;
-		}
-
-		.sidebar.open {
+		.hamburger {
 			display: flex;
-			width: 250px;
-			animation: translateOpen 0.3s ease-in-out;
-		}
-
-		.open .line1 {
-			width: 2em;
-			transform: rotate(-45deg) translate(-0.3em, 0.3em);
-		}
-
-		.open .line2 {
-			opacity: 0;
-		}
-
-		.open .line3 {
-			width: 2em;
-			transform: rotate(45deg) translate(-0.3em, -0.3em);
-		}
-
-		.line1,
-		.line2,
-		.line3 {
-			width: 2em;
-			height: 2px;
-			background: white;
-			margin: 0.3em;
-			border-radius: 0.3em;
-			animation: transform 0.5s ease-in-out;
-		}
-
-		.menu-btn {
-			margin-top: 15px;
-			display: flex;
-			align-items: center;
-			flex-direction: column;
-			justify-content: center;
-			width: 3em;
-			margin-right: auto;
-			margin-left: 10px;
-			height: 3em;
-			border: none;
-			background: none;
-		}
-
-		.open.menu-btn {
-			z-index: 1;
-		}
-
-		.sidebar a {
-			color: white;
-			font-size: 1rem;
-			text-align: center;
-			text-decoration: none;
-		}
-
-		.sidebar nav {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: auto;
-		}
-
-		.sidebar nav a:hover {
-			background: rgba(255, 255, 255, 0.1);
+			margin-left: auto;
 		}
 	}
 </style>
