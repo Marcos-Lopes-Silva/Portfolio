@@ -13,13 +13,14 @@ export type Project = {
 
 export const projects: Project[] = [
 	{
-		name: 'Agência de Cargas',
-		tagline: 'Gestão de fretes agenciados — do embarcador ao motorista',
+		name: 'Viver — Residencial Geriátrico',
+		tagline: 'Gestão de cuidados a partir de protótipos reais do cliente',
 		description:
-			'Sistema interno que conecta embarcadores (quem tem carga) a transportadoras e motoristas autônomos (quem tem veículo). Torna visível o spread da agência e responde "cadê minha carga?" sem depender do WhatsApp, com controle de acesso por papéis, rastreamento de fretes e uma base dos 5.570 municípios do IBGE.',
-		techs: ['Next.js 16', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Tailwind'],
-		live: 'https://cargas.marcosls.com',
-		featured: true
+			'Sistema de gestão para o Residencial Geriátrico Viver: cadastro de residentes, rotinas de cuidado e controle de acesso por perfil (administrativo, secretaria, cuidadores, médico, fisioterapeuta e nutricionista). Desenvolvido a partir de proposta e protótipos reais do cliente.',
+		techs: ['Java', 'Spring Boot', 'Hibernate', 'React', 'PostgreSQL'],
+		live: 'https://viver.marcosls.com',
+		featured: true,
+		repo: 'https://github.com/Marcos-Lopes-Silva/residencial-viver'
 	},
 	{
 		name: 'Plataforma de Dados — Petrobras / CeMEAI',
@@ -29,6 +30,14 @@ export const projects: Project[] = [
 		techs: ['Next.js', 'React', 'TypeScript', 'Redux Toolkit', 'FastAPI'],
 		note: 'Projeto profissional — código privado',
 		featured: true
+	},
+	{
+		name: 'Agência de Cargas',
+		tagline: 'Gestão de fretes agenciados — do embarcador ao motorista',
+		description:
+			'Sistema interno que conecta embarcadores (quem tem carga) a transportadoras e motoristas autônomos (quem tem veículo). Torna visível o spread da agência e responde "cadê minha carga?" sem depender do WhatsApp, com controle de acesso por papéis, rastreamento de fretes e uma base dos 5.570 municípios do IBGE.',
+		techs: ['Next.js 16', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Tailwind'],
+		live: 'https://cargas.marcosls.com',
 	},
 	{
 		name: 'FragVault',
@@ -45,15 +54,7 @@ export const projects: Project[] = [
 		description:
 			'Plataforma para criar e aplicar pesquisas com egressos dos cursos de computação da UNIPAMPA: construtor de questionários drag-and-drop, autenticação por papéis, internacionalização, dashboards de resultados e exportação em CSV/PDF. Liderei e mentorei a equipe de bolsistas.',
 		techs: ['Next.js', 'TypeScript', 'MongoDB', 'Redux Toolkit', 'i18n'],
-		repo: 'https://github.com/Marcos-Lopes-Silva/SAVE-newversion'
-	},
-	{
-		name: 'Viver — Residencial Geriátrico',
-		tagline: 'Gestão de cuidados a partir de protótipos reais do cliente',
-		description:
-			'Sistema de gestão para o Residencial Geriátrico Viver: cadastro de residentes, rotinas de cuidado e controle de acesso por perfil (administrativo, secretaria, cuidadores, médico, fisioterapeuta e nutricionista). Desenvolvido a partir de proposta e protótipos reais do cliente.',
-		techs: ['Java', 'Spring Boot', 'Hibernate', 'React', 'PostgreSQL'],
-		live: 'https://viver.marcosls.com'
+		repo: 'https://github.com/Marcos-Lopes-Silva/SAVE'
 	},
 	{
 		name: 'ReceitasLivres',
