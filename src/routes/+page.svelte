@@ -64,10 +64,9 @@
 	];
 
 	const facts = [
-		{ k: 'Foco', v: 'Frontend — React, Next.js e TypeScript' },
+		{ k: 'Frontend', v: 'React, Next.js, TypeScript, Svelte' },
 		{ k: 'Backend', v: 'Python/FastAPI, Java/Spring Boot, PHP/Laravel' },
-		{ k: 'Mobile & Testes', v: 'React Native, Kotlin · Jest, Pytest' },
-		{ k: 'Liderança', v: 'Mentoria e coordenação de bolsistas no SAVE' }
+		{ k: 'Mobile & Testes', v: 'React Native, Kotlin · Jest, Pytest' }
 	];
 
 	function openGmail() {
@@ -86,7 +85,7 @@
 	<title>Marcos Eduardo Lopes Silva — Desenvolvedor Full-Stack</title>
 	<meta
 		name="description"
-		content="Marcos Eduardo Lopes Silva — desenvolvedor full-stack com foco em frontend (React, Next.js, TypeScript). Projetos, stack e contato."
+		content=""
 	/>
 	<meta property="og:type" content="profile" />
 	<meta property="og:title" content="Marcos Eduardo Lopes Silva — Desenvolvedor Full-Stack" />
@@ -109,19 +108,18 @@
 })}</script>`}
 </svelte:head>
 
-<!-- ── Hero ───────────────────────────────────────────── -->
 <section id="home" class="hero">
 	<div class="hero-inner">
 		<p class="badge">
 			<span class="dot"></span> Disponível para novas oportunidades
 		</p>
 		<h1>
-			<span class="hi">Olá, eu sou</span>
+			<span class="hi">Olá, me chamo</span>
 			<span class="name gradient-text">Marcos Eduardo Lopes Silva</span>
 		</h1>
 		<p class="lead">
-			Desenvolvedor <strong>full-stack</strong> com foco em frontend. Transformo problemas complexos
-			em interfaces claras, rápidas e agradáveis de usar.
+			Desenvolvedor <strong>full-stack</strong>, com experiência em frontend e backend. Trabalho
+			com React, TypeScript, Java e Python.
 		</p>
 		<div class="cta">
 			<button class="btn primary" on:click={() => scrollTo('projects')}>Ver projetos</button>
@@ -134,23 +132,18 @@
 	</button>
 </section>
 
-<!-- ── Sobre ──────────────────────────────────────────── -->
 <section id="about" class="section">
 	<p class="eyebrow reveal" use:reveal>Sobre</p>
 	<div class="about-grid">
 		<div class="about-text reveal" use:reveal={{ delay: 80 }}>
-			<h2>Interfaces claras a partir de problemas complexos.</h2>
+			<h2>Desenvolvedor full-stack, formado em Engenharia de Software.</h2>
 			<p>
-				Sou Marcos, desenvolvedor full-stack com foco em frontend e estudante de Engenharia de
-				Software. Atuei como principal desenvolvedor do frontend de uma plataforma de dados
-				intensivos para a <strong>Petrobras</strong>, em parceria com o CeMEAI, trabalhando com
-				gerenciamento de estado, visualização de dados e integração com APIs assíncronas.
+				Trabalhei no frontend de uma plataforma de dados para a
+				<strong>Petrobras</strong>, em parceria com o CeMEAI. Gerenciamento de estado,
+				visualização de dados e integração com APIs assíncronas.
 			</p>
 			<p>
-				Também atuo no backend com Python/FastAPI e já trabalhei com Java/Spring, PHP/Laravel e
-				serviços na AWS. Tenho experiência com mobile (React Native e Kotlin), testes automatizados
-				e liderança de equipe — ensinei programação e coordenei bolsistas no desenvolvimento do SAVE,
-				na UNIPAMPA. Valorizo boas práticas e código limpo.
+				na AWS. Tenho experiência com mobile (React Native e Kotlin) e testes automatizados.
 			</p>
 		</div>
 		<ul class="facts reveal" use:reveal={{ delay: 160 }}>
@@ -164,10 +157,9 @@
 	</div>
 </section>
 
-<!-- ── Stack ──────────────────────────────────────────── -->
 <section id="stack" class="section">
 	<p class="eyebrow reveal" use:reveal>Tecnologias</p>
-	<h2 class="reveal" use:reveal={{ delay: 60 }}>Ferramentas com que trabalho</h2>
+	<h2 class="reveal" use:reveal={{ delay: 60 }}>Tecnologias que uso</h2>
 	<div class="stack">
 		{#each stack as col, ci}
 			<div class="stack-col reveal" use:reveal={{ delay: 120 + ci * 90 }}>
@@ -185,10 +177,9 @@
 	</div>
 </section>
 
-<!-- ── Projetos ───────────────────────────────────────── -->
 <section id="projects" class="section">
 	<p class="eyebrow reveal" use:reveal>Projetos</p>
-	<h2 class="reveal" use:reveal={{ delay: 60 }}>Coisas que construí</h2>
+	<h2 class="reveal" use:reveal={{ delay: 60 }}>Projetos</h2>
 	<div class="projects">
 		{#each projects as project, i}
 			<article
@@ -228,9 +219,9 @@
 <section id="contact" class="section contact">
 	<div class="contact-card reveal" use:reveal>
 		<p class="eyebrow">Contato</p>
-		<h2>Vamos construir algo juntos?</h2>
+		<h2>Entre em contato</h2>
 		<p class="lead">
-			Estou aberto a novas conexões e oportunidades. Me mande uma mensagem — respondo rápido.
+			Estou disponível para conversas sobre projetos e oportunidades.
 		</p>
 		<div class="contact-actions">
 			<button class="btn primary" on:click={openGmail}>
@@ -270,7 +261,7 @@
 		font-family: var(--font-body);
 		font-size: 0.9rem;
 		font-weight: 600;
-		border-radius: 999px;
+		border-radius: 0;
 		border: 1px solid transparent;
 		cursor: pointer;
 		transition:
@@ -287,13 +278,14 @@
 
 	.btn.primary {
 		color: #fff;
-		background: var(--gradient);
-		box-shadow: 0 8px 24px -8px var(--glow-1);
+		background: var(--accent-1);
+		box-shadow: 0 6px 20px -6px var(--glow-1);
 	}
 
 	.btn.primary:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 14px 34px -8px var(--glow-1);
+		box-shadow: 0 12px 28px -6px var(--glow-1);
+		background: #8aafc9;
 	}
 
 	.btn.ghost {
@@ -305,7 +297,7 @@
 	.btn.ghost:hover {
 		transform: translateY(-2px);
 		background: var(--surface-2);
-		border-color: rgba(168, 85, 247, 0.4);
+		border-color: rgba(123, 156, 204, 0.35);
 	}
 
 	/* ── hero ── */
@@ -356,15 +348,15 @@
 		width: 0.5rem;
 		height: 0.5rem;
 		border-radius: 50%;
-		background: #22d3ee;
-		box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.6);
+		background: var(--accent-2);
+		box-shadow: 0 0 0 0 rgba(110, 170, 168, 0.5);
 		animation: pulse 2s infinite;
 	}
 
 	@keyframes pulse {
-		0% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.55); }
-		70% { box-shadow: 0 0 0 8px rgba(34, 211, 238, 0); }
-		100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+		0% { box-shadow: 0 0 0 0 rgba(110, 170, 168, 0.5); }
+		70% { box-shadow: 0 0 0 8px rgba(110, 170, 168, 0); }
+		100% { box-shadow: 0 0 0 0 rgba(110, 170, 168, 0); }
 	}
 
 	.hero h1 {
@@ -411,7 +403,7 @@
 		width: 1.5rem;
 		height: 2.4rem;
 		border: 2px solid var(--border);
-		border-radius: 999px;
+		border-radius: 0;
 		background: none;
 		cursor: pointer;
 	}
@@ -464,7 +456,7 @@
 		gap: 1.1rem;
 		background: var(--surface);
 		border: 1px solid var(--border);
-		border-radius: 16px;
+		border-radius: 0;
 	}
 
 	.facts li {
@@ -497,7 +489,7 @@
 		padding: 1.4rem;
 		background: var(--surface);
 		border: 1px solid var(--border);
-		border-radius: 16px;
+		border-radius: 0;
 	}
 
 	.stack-col h3 {
@@ -523,12 +515,12 @@
 		font-size: 0.82rem;
 		background: var(--surface-2);
 		border: 1px solid var(--border);
-		border-radius: 999px;
+		border-radius: 0;
 		transition: border-color 0.2s ease, transform 0.2s ease;
 	}
 
 	.chip:hover {
-		border-color: rgba(168, 85, 247, 0.5);
+		border-color: rgba(123, 156, 204, 0.4);
 		transform: translateY(-2px);
 	}
 
@@ -552,7 +544,7 @@
 		padding: 1.7rem;
 		background: var(--surface);
 		border: 1px solid var(--border);
-		border-radius: 18px;
+		border-radius: 0;
 		overflow: hidden;
 		transition: transform 0.3s ease, border-color 0.3s ease;
 	}
@@ -625,7 +617,7 @@
 		padding: 0.25rem 0.6rem;
 		color: var(--text-dim);
 		background: var(--surface-2);
-		border-radius: 6px;
+		border-radius: 0;
 	}
 
 	.links {
@@ -673,10 +665,10 @@
 		text-align: center;
 		padding: 3.5rem 2rem;
 		background:
-			radial-gradient(120% 140% at 50% 0%, rgba(168, 85, 247, 0.12), transparent 55%),
+			radial-gradient(120% 140% at 50% 0%, rgba(123, 156, 204, 0.07), transparent 55%),
 			var(--surface);
 		border: 1px solid var(--border);
-		border-radius: 24px;
+		border-radius: 0;
 	}
 
 	.contact-card .eyebrow {

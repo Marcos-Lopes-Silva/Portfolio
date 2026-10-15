@@ -153,7 +153,7 @@
 		font-weight: 500;
 		letter-spacing: 0.02em;
 		color: var(--text-dim);
-		border-radius: 999px;
+		border-radius: 0;
 		transition:
 			color 0.2s ease,
 			background 0.2s ease;
@@ -183,7 +183,7 @@
 		padding: 0;
 		border: none;
 		background: none;
-		border-radius: 10px;
+		border-radius: 0;
 		color: var(--text-dim);
 		cursor: pointer;
 		transition:
@@ -276,7 +276,7 @@
 		font-family: var(--font-display);
 		font-size: 1.1rem;
 		color: var(--text-dim);
-		border-radius: 10px;
+		border-radius: 0;
 		transition: background 0.2s ease, color 0.2s ease;
 	}
 

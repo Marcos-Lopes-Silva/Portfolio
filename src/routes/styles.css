@@ -7,18 +7,18 @@
 	--font-mono: 'Fira Mono', monospace;
 
 	/* surfaces */
-	--bg-0: #07070c;
-	--bg-1: #0c0c16;
-	--surface: rgba(255, 255, 255, 0.028);
-	--surface-2: rgba(255, 255, 255, 0.05);
-	--border: rgba(255, 255, 255, 0.08);
+	--bg-0: #0d0f14;
+	--bg-1: #12151c;
+	--surface: rgba(255, 255, 255, 0.034);
+	--surface-2: rgba(255, 255, 255, 0.062);
+	--border: rgba(255, 255, 255, 0.09);
 
-	/* accents */
-	--accent-1: #a855f7;
-	--accent-2: #22d3ee;
-	--gradient: linear-gradient(135deg, #a855f7 0%, #6366f1 45%, #22d3ee 100%);
-	--glow-1: rgba(168, 85, 247, 0.35);
-	--glow-2: rgba(34, 211, 238, 0.25);
+	/* accents — softer slate-blue / muted teal */
+	--accent-1: #7b9ccc;
+	--accent-2: #6eaaa8;
+	--gradient: linear-gradient(135deg, #7b9ccc 0%, #8aafc9 100%);
+	--glow-1: rgba(123, 156, 204, 0.22);
+	--glow-2: rgba(110, 170, 168, 0.18);
 
 	/* text */
 	--text: #e8e8f0;
@@ -84,13 +84,9 @@ img {
 	color: #fff;
 }
 
-/* gradient text utility */
+/* accent text — soft solid highlight instead of vivid gradient */
 .gradient-text {
-	background: var(--gradient);
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-	color: transparent;
+	color: var(--accent-1);
 }
 
 /* small mono label used as section eyebrow */

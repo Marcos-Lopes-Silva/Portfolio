@@ -28,12 +28,12 @@ export const projects: Project[] = [
 		description:
 			'Aplicação web de dados intensivos desenvolvida para a Petrobras em parceria com o CeMEAI. Atuei como principal desenvolvedor do frontend, lidando com fluxos complexos de tratamento de dados, gerenciamento de estado, visualização e geração de relatórios.',
 		techs: ['Next.js', 'React', 'TypeScript', 'Redux Toolkit', 'FastAPI'],
-		note: 'Projeto profissional — código privado',
+		note: 'Projeto profissional, código privado',
 		featured: true
 	},
 	{
 		name: 'Agência de Cargas',
-		tagline: 'Gestão de fretes agenciados — do embarcador ao motorista',
+		tagline: 'Gestão de fretes agenciados: do embarcador ao motorista',
 		description:
 			'Sistema interno que conecta embarcadores (quem tem carga) a transportadoras e motoristas autônomos (quem tem veículo). Torna visível o spread da agência e responde "cadê minha carga?" sem depender do WhatsApp, com controle de acesso por papéis, rastreamento de fretes e uma base dos 5.570 municípios do IBGE.',
 		techs: ['Next.js 16', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Tailwind'],
@@ -58,7 +58,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'ReceitasLivres',
-		tagline: 'Projeto pessoal — React + Spring Boot',
+		tagline: 'Projeto pessoal com React e Spring Boot',
 		description:
 			'Site de receitas full-stack, construído para praticar a integração entre um frontend em React e uma API REST em Spring Boot, com upload de imagens para o AWS S3.',
 		techs: ['React', 'TypeScript', 'Java', 'Spring Boot', 'AWS S3'],

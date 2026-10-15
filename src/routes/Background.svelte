@@ -1,4 +1,3 @@
-<!-- Ambient animated background: drifting gradient orbs + subtle grid. -->
 <div class="bg" aria-hidden="true">
 	<div class="grid"></div>
 	<div class="orb orb-1"></div>
@@ -14,7 +13,7 @@
 		z-index: -1;
 		overflow: hidden;
 		background:
-			radial-gradient(120% 80% at 50% -10%, rgba(99, 102, 241, 0.12), transparent 60%),
+			radial-gradient(120% 80% at 50% -10%, rgba(80, 110, 160, 0.07), transparent 60%),
 			var(--bg-0);
 	}
 
@@ -32,8 +31,8 @@
 	.orb {
 		position: absolute;
 		border-radius: 50%;
-		filter: blur(90px);
-		opacity: 0.55;
+		filter: blur(110px);
+		opacity: 0.3;
 		will-change: transform;
 	}
 
@@ -42,7 +41,7 @@
 		height: 44rem;
 		top: -16rem;
 		left: -12rem;
-		background: radial-gradient(circle, rgba(168, 85, 247, 0.55), transparent 70%);
+		background: radial-gradient(circle, rgba(90, 130, 190, 0.45), transparent 70%);
 		animation: drift-1 22s ease-in-out infinite;
 	}
 
@@ -51,7 +50,7 @@
 		height: 38rem;
 		top: 30%;
 		right: -14rem;
-		background: radial-gradient(circle, rgba(34, 211, 238, 0.4), transparent 70%);
+		background: radial-gradient(circle, rgba(80, 150, 160, 0.3), transparent 70%);
 		animation: drift-2 26s ease-in-out infinite;
 	}
 
@@ -60,7 +59,7 @@
 		height: 34rem;
 		bottom: -14rem;
 		left: 25%;
-		background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+		background: radial-gradient(circle, rgba(70, 100, 160, 0.28), transparent 70%);
 		animation: drift-3 30s ease-in-out infinite;
 	}
 
